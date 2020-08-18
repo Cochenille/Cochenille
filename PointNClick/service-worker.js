@@ -39,4 +39,17 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
     console.log('[ServiceWorker] Fetch', evt.request.url);
     //Add fetch event handler here.
+    if (evt.request.mode !== 'navigate') {
+        // Not a page navigation, bail.
+        return;
+    }
+    evt.respondWith(
+        fetch(evt.request)
+            .catch(() => {
+                return caches.open(CACHE_NAME)
+                    .then((cache) => {
+                        return cache.match('offline.html');
+                    });
+            })
+    );
 });
