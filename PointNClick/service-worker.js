@@ -23,6 +23,16 @@ self.addEventListener('install', (evt) => {
 self.addEventListener('activate', (evt) => {
     console.log('[ServiceWorker] Activate');
     //Remove previous cached data from disk.
+    evt.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                if (key !== CACHE_NAME) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
     self.clients.claim();
 });
 
