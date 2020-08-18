@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr-ca">
 <head>
-  <meta charset="utf-8">
 	<title>Point'n Click - Accueil</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
 	<link rel="icon" type="image/png" href="img/favicon.svg" />
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -14,6 +13,18 @@
 	<link rel="apple-touch-icon" href="img/icons/icon-152x152.png">
 	<meta name="description" content="A sample weather app">
 	<meta name="theme-color" content="#2F3BA2" />
+	<script>
+		// Register service worker.
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('service-worker.js')
+						.then((reg) => {
+							console.log('Service worker registered.', reg);
+						});
+			});
+		}
+	</script>
+</head>
 
 
 
@@ -32,10 +43,10 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item pl-lg-4 pr-lg-2 mb-lg-0 mb-2 d-flex ml-auto">
-				<a class="nav-link px-lg-4 px-2" href="pages/jeux.html">découvrir des jeux</a>
+				<a class="nav-link px-lg-4 px-2" href="jeux.html">découvrir des jeux</a>
 			</li>
 			<li class="nav-item pl-lg-2 pr-lg-4 d-flex ml-auto">
-				<a class="nav-link px-lg-4 px-2" href="pages/histoire.html">historique</a>
+				<a class="nav-link px-lg-4 px-2" href="histoire.html">historique</a>
 			</li>
 		</ul>
 	</div>
@@ -70,7 +81,7 @@
 			<p class="w-100 text-center pt-md-5 pb-md-0 pt-3">Et d'un dispositif de pointage.</p>
 		</div>
 		<div id="boutonJeu" class="col-12 mt-5 justify-content-center cacher">
-			<a href="pages/jeux.html" type="button" class="btn pl-4 pr-4">découvrir des jeux</a>
+			<a href="jeux.html" type="button" class="btn pl-4 pr-4">découvrir des jeux</a>
 		</div>
 	</div>
 	<div class="row">
@@ -122,14 +133,14 @@
 	<div class="container offset-lg-3 col-lg-6">
 		<h2>Daignerez-vous entrer dans l'univers?</h2>
 		<p class="lead m-auto pt-4 pb-4">Si vous êtes curieux d'en connaître un peu plus sur l'historique des jeux point'n click, c'est par ici.</p>
-		<a href="pages/histoire.html" type="button" class="btn pl-4 pr-4">en savoir plus</a>
+		<a href="histoire.html" type="button" class="btn pl-4 pr-4">en savoir plus</a>
 	</div>
 </section>
 
 <footer class="container-fluid pl-3 pr-3">
 	<div class="row">
 		<div class="col-12 d-flex">
-			<a class="navbar-brand m-auto" href="../index.html">
+			<a class="navbar-brand m-auto" href="index.html">
 				<img src="img/logo-inverse.svg" alt="Logo Point'n Click" class="logo" /><span class="sr-only">(current)</span>
 			</a>
 		</div>
@@ -139,10 +150,10 @@
 		<div class="offset-md-0 col-md-4 offset-sm-3 col-sm-6 offset-2 col-8">
 			<ul class="text-center footer-nav">
 				<li class="nav-item">
-					<a class="nav-link pl-4 pr-4" href="pages/jeux.html">découvrir des jeux</a>
+					<a class="nav-link pl-4 pr-4" href="jeux.html">découvrir des jeux</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link pl-4 pr-4" href="pages/histoire.html">historique</a>
+					<a class="nav-link pl-4 pr-4" href="histoire.html">historique</a>
 				</li>
 			</ul>
 		</div>
@@ -159,6 +170,5 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
-</head>
 </body>
 </html>
