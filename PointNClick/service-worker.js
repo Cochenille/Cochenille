@@ -7,7 +7,6 @@ const FILES_TO_CACHE = [
     'offline.html',
     'index.html',
     'histoire.html',
-    'index.html',
     'jeux.html',
     'js/install.js',
     //etc.....
