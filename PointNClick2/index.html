@@ -7,24 +7,7 @@
 	<link rel="icon" type="image/png" href="img/favicon.svg" />
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="manifest" href="manifest.json">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="Weather PWA">
-	<link rel="apple-touch-icon" href="img/icons/icon-152x152.png">
-	<meta name="description" content="A sample weather app">
-	<meta name="theme-color" content="#2F3BA2" />
-	<script>
-		// Register service worker.
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('service-worker.js')
-						.then((reg) => {
-							console.log('Service worker registered.', reg);
-						});
-			});
-		}
-	</script>
+
 </head>
 <body>
 
@@ -39,9 +22,7 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item pl-lg-2 pr-lg-4 d-flex ml-auto">
-				<button class="nav-link px-lg-4 px-2" id="butInstall" aria-label="Install" hidden>Installer la PWA</button>
-			</li>
+
 			<li class="nav-item pl-lg-4 pr-lg-2 mb-lg-0 mb-2 d-flex ml-auto">
 				<a class="nav-link px-lg-4 px-2" href="jeux.html">découvrir des jeux</a>
 			</li>
@@ -171,6 +152,6 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
-<script src="js/install.js"></script>
+
 </body>
 </html>
