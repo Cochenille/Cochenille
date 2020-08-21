@@ -2,32 +2,22 @@ let deferredInstallPrompt = null;
 const installButton = document.getElementById('butInstall');
 installButton.addEventListener('click', installPWA);
 
-// Add event listener for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
-/**
- * Event handler for beforeinstallprompt event.
- *   Saves the event & shows install button.
- *
- * @param {Event} evt
- */
-function saveBeforeInstallPromptEvent(evt) {
-    // Add code to save event & show the install button.
+//Add event listener for beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', afficherLebouton);
+
+function afficherLebouton(evt) {
+    //Add code to save event & show the install button.
     deferredInstallPrompt = evt;
     installButton.removeAttribute('hidden');
 }
 
-/**
- * Event handler for butInstall - Does the PWA installation.
- *
- * @param {Event} evt
- */
+
 function installPWA(evt) {
     // Add code show install prompt & hide the install button.
     deferredInstallPrompt.prompt();
     // Hide the install button, it can't be called twice.
     evt.srcElement.setAttribute('hidden', true);
-
     // Log user response to prompt.
     deferredInstallPrompt.userChoice
         .then((choice) => {
@@ -44,11 +34,11 @@ function installPWA(evt) {
 window.addEventListener('appinstalled', logAppInstalled);
 /**
  * Event handler for appinstalled event.
- *   Log the installation to analytics or save the event somehow.
+ * Log the installation to analytics or save the event somehow.
  *
  * @param {Event} evt
  */
 function logAppInstalled(evt) {
-    // Add code to log the event
-    console.log('Weather App was installed.', evt);
+// Add code to log the event
+    console.log('PintNClick App was installed via ...', evt);
 }
