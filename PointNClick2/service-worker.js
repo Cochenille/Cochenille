@@ -1,5 +1,5 @@
 //Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v9';
+const CACHE_NAME = 'static-cache-v10';
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -50,7 +50,7 @@ self.addEventListener("fetch", event => {
         // or whatever your app's URL is
         event.respondWith(
             fetch(event.request).catch(err =>
-                self.cache.open(CACHE_NAME).then(cache => cache.match("offline.html"))
+                self.caches.open(CACHE_NAME).then(cache => cache.match("offline.html"))
             )
         );
     } else {
