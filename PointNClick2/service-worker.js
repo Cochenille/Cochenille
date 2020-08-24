@@ -1,5 +1,5 @@
 //Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v10';
+const CACHE_NAME = 'static-cache-v11';
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -44,7 +44,7 @@ self.addEventListener('activate', (evt) => {
 });
 
 
-
+//working mais le refresh retourne offline.html
 self.addEventListener("fetch", event => {
     if (event.request.url === "https://cochenille.github.io/Cochenille/PointNClick2/index.html") {
         // or whatever your app's URL is
