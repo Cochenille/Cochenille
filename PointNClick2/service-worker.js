@@ -1,5 +1,5 @@
 //Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v11';
+const CACHE_NAME = 'static-cache-v12';
 
 //Add list of files to cache here.
 const FILES_TO_CACHE = [
@@ -44,20 +44,21 @@ self.addEventListener('activate', (evt) => {
 });
 
 
-//working mais le refresh retourne offline.html
-self.addEventListener("fetch", event => {
-    if (event.request.url === "https://cochenille.github.io/Cochenille/PointNClick2/index.html") {
-        // or whatever your app's URL is
-        event.respondWith(
-            fetch(event.request).catch(err =>
-                self.caches.open(CACHE_NAME).then(cache => cache.match("offline.html"))
-            )
-        );
-    } else {
-        event.respondWith(
-            fetch(event.request).catch(err =>
-                caches.match(event.request).then(response => response)
-            )
-        );
+
+self.addEventListener('fetch', (evt) => {
+    console.log('[ServiceWorker] Fetch', evt.request.url);
+    //Add fetch event handler here.
+    if (evt.request.mode !== 'navigate') {
+    // Not a page navigation, bail.
+        return;
     }
+    evt.respondWith(
+        fetch(evt.request)
+            .catch(() => {
+                return caches.open(CACHE_NAME)
+                    .then((cache) => {
+                        return cache.match('/Cochenille/PointNClick2/offline.html' );
+                    });
+            })
+    );
 });
