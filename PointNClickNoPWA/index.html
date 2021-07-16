@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr-ca">
+<head>
+	<title>Point'n Click - Accueil</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="img/favicon.svg" />
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg position-absolute w-100">
+	<a class="navbar-brand pl-sm-4 pl-2" href="#">
+		<img src="img/logo.svg" alt="Logo Point'n Click" class="logo" /><span class="sr-only">(current)</span>
+	</a>
+	<button id="boutonMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+		<i class="fas fa-times cacher"></i>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item pl-lg-4 pr-lg-2 mb-lg-0 mb-2 d-flex ml-auto">
+				<button class="nav-link px-lg-4 px-2" id="butInstall"
+						aria-label="Install" hidden>Installer la PWA</button>
+			</li>
+			<li class="nav-item pl-lg-4 pr-lg-2 mb-lg-0 mb-2 d-flex ml-auto">
+				<a class="nav-link px-lg-4 px-2" href="jeux.html">découvrir des jeux</a>
+			</li>
+			<li class="nav-item pl-lg-2 pr-lg-4 d-flex ml-auto">
+				<a class="nav-link px-lg-4 px-2" href="histoire.html">historique</a>
+			</li>
+
+		</ul>
+	</div>
+</nav>
+
+<header class="container-fluid h-100 headerAccueil fullBg">
+	<div class="row h-100 d-flex align-items-lg-center align-items-end">
+		<div class="col-12 degrade-blanc degrade-blanc1"></div>
+		<div class="col-12 svgIntro"></div>
+		<div class="col-lg-3 col-md-6">
+			<h3 class="pl-sm-4 pb-lg-0 pb-4 m-sm-0 m-auto text-sm-left text-center">Qui sait jusqu'où cela peut vous mener?</h3>
+		</div>
+	</div>
+</header>
+
+<section class="container-fluid sectionAwesome">
+	<div class="row emplacements">
+		<div class="col-lg-2 offset-lg-2 col-md-3 col-sm-6 d-flex flex-wrap justify-content-center align-content-start">
+			<div id="emplacementUser" class="caseGrise m-auto d-flex justify-content-center align-items-center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<p class="w-100 text-center pt-md-5 pb-md-0 pt-3 pb-4">Pour jouer en solo,</p>
+		</div>
+		<div class="col-lg-2 col-md-3 col-sm-6 d-flex flex-wrap justify-content-center align-content-start">
+			<div id="emplacementBinoculars" class="caseGrise m-auto d-flex justify-content-center align-items-center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<p class="w-100 text-center pt-md-5 pb-md-0 pt-3 pb-4">Les yeux grand ouverts,</p>
+		</div>
+		<div class="col-lg-2 col-md-3 col-sm-6 d-flex flex-wrap justify-content-center align-content-start">
+			<div id="emplacementPuzzle" class="caseGrise m-auto d-flex justify-content-center align-items-center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<p class="w-100 text-center pt-md-5 pb-sm-0 pt-3 pb-4">User d'un peu de logique,</p>
+		</div>
+		<div class="col-lg-2 col-md-3 col-sm-6 d-flex flex-wrap justify-content-center align-content-start">
+			<div id="emplacementMouse" class="caseGrise m-auto d-flex justify-content-center align-items-center" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<p class="w-100 text-center pt-md-5 pb-md-0 pt-3">Et d'un dispositif de pointage.</p>
+		</div>
+		<div id="boutonJeu" class="col-12 mt-5 justify-content-center cacher">
+			<a href="jeux.html" type="button" class="btn pl-4 pr-4">découvrir des jeux</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2 offset-md-10 col-sm-8 offset-sm-4 icones">
+			<i id="user" class="icone fas fa-user" ></i>
+			<i id="binoculars" class="icone fas fa-binoculars" ></i>
+			<i id="puzzle-piece" class="icone fas fa-puzzle-piece"></i>
+			<i id="mouse" class="icone fas fa-mouse"></i>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2 inventaire">
+			<div class="inside-inventaire d-flex flex-sm-nowrap flex-wrap align-items-center">
+				<p class="mb-0 titreInventaire">Inventaire:</p>
+				<div class="group-cases d-flex">
+					<div id="case0" class="case d-flex align-items-center justify-content-center"></div>
+					<div id="case1" class="case d-flex align-items-center justify-content-center"></div>
+					<div id="case2" class="case d-flex align-items-center justify-content-center"></div>
+					<div id="case3" class="case d-flex align-items-center justify-content-center"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+					<div class="case"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="jumbotron jumbotron-fluid text-center">
+	<div class="bgBouge"></div>
+	<div class="container offset-lg-3 col-lg-6">
+		<h2>Daignerez-vous entrer dans l'univers?</h2>
+		<p class="lead m-auto pt-4 pb-4">Si vous êtes curieux d'en connaître un peu plus sur l'historique des jeux point'n click, c'est par ici.</p>
+		<a href="histoire.html" type="button" class="btn pl-4 pr-4">en savoir plus</a>
+	</div>
+</section>
+
+<footer class="container-fluid pl-3 pr-3">
+	<div class="row">
+		<div class="col-12 d-flex">
+			<a class="navbar-brand m-auto" href="index.html">
+				<img src="img/logo-inverse.svg" alt="Logo Point'n Click" class="logo" /><span class="sr-only">(current)</span>
+			</a>
+		</div>
+		<div class="col-md-4 d-flex justify-content-md-end justify-content-center">
+			<p class="text-md-left text-center explicationProjet">Point'n Click est un hommage aux jeux vidéo d'aventure qui ont peuplé ma jeunesse et continuent d'exercer un pouvoir magnétique sur mes rêves de grande personne.</p>
+		</div>
+		<div class="offset-md-0 col-md-4 offset-sm-3 col-sm-6 offset-2 col-8">
+			<ul class="text-center footer-nav">
+				<li class="nav-item">
+					<a class="nav-link pl-4 pr-4" href="jeux.html">découvrir des jeux</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link pl-4 pr-4" href="histoire.html">historique</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 pr-4 d-flex justify-content-md-start justify-content-center">
+			<div class="text-md-left text-center">
+				<p class="w-100">Projet réalisé par: Anne Moncion</p>
+				<p class="w-100">Technologies utilisées:<br>CSS, Bootstrap, Javascript, JQuery</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a46d75ba7a.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

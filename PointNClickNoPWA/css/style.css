@@ -1,0 +1,885 @@
+/*  style.css
+    Par Anne Moncion
+    Dernière modification: 1er avril 2020
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
+
+@font-face {
+    font-family: "Buckwheat";
+    src: url("../font/Buckwheat_TC_Sans_Painted.otf");
+}
+
+/* <<<<<<<<<<<<<*** GÉNÉRAL ***>>>>>>>>>>>>>>>>> */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inconsolata', monospace;
+}
+
+/* *** Typographie *** */
+
+h1,h2,h3 {
+    font-family: 'Buckwheat', sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+   font-size: 2.2rem;
+}
+h3 {
+    font-size: 1.6rem;
+    line-height: 1.5em;
+}
+
+header h3 {
+    max-width: 280px;
+}
+
+.lead {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+/* *** Liens *** */
+
+a {
+    color: #28170b;
+}
+a:hover {
+    color: #000;
+}
+
+.blanc {
+    color: #fff;
+}
+
+.btn, .card-link {
+    background-color: rgba(255,255,255,.8);
+    border: 1px solid #000;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.btn:hover, .card-link:hover {
+    background-color: rgba(255,255,255,1);
+}
+
+/* *** Style - Bloc communs *** */
+.mobile, .smallMobile {
+    display: block;
+}
+.desktop, .tablette {
+    display: none;
+}
+@media (min-width: 576px) {
+    .smallMobile {
+        display: none;
+    }
+    .tablette {
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: rgba(77,77,77,.5);
+    overflow:hidden;
+    color: #fff;
+}
+
+.fullBg {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.degrade-blanc {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.degrade-blanc1 {
+    height: 300px;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 17%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+.degrade-blanc2 {
+    height: 100%;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,0.30015756302521013) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,0.30015756302521013) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,0.30015756302521013) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+}
+
+/* <<<<<<<<<<<<<*** NAVIGATION ***>>>>>>>>>>>>>>>>> */
+
+.navbar {
+    z-index: 100;
+    /*background-color: #fff;*/
+    overflow-y: visible;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand {
+    position: relative;
+    top: 0.75rem;
+}
+
+.navbar-nav {
+    padding-top: 1rem;
+}
+
+.navbar .nav-link {
+    border: 2px solid #fff;
+    font-weight: bold;
+    background-color: rgba(255,255,255,.5);
+}
+
+.nav-link:hover, .navbar .nav-link:hover {
+    border: 1px solid #000;
+}
+.active .nav-link, .navbar .active .nav-link {
+    border: 1px solid transparent;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    cursor: default;
+}
+
+.navbar-toggler {
+    border: 0;
+    border-radius: 0;
+    /*padding: 0.625rem 0.75rem;*/
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: 2px;
+}
+.navbar-toggler:focus {
+    outline-color: #e3e2db;
+}
+
+.navbar .fa-bars, .navbar .fa-times {
+    color: #28170b;
+    position: relative;
+    top: 1px;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding-top: 1.5rem;
+        height: 3rem;
+    }
+
+    .navbar-nav {
+        padding-top: 0;
+    }
+
+    .navbar .nav-link {
+        border: 1px solid transparent;
+        background-color: transparent;
+    }
+
+    .navbar .active .nav-link {
+        background-color: transparent;
+    }
+}
+
+/* <<<<<<<<<<<<<*** FOOTER ***>>>>>>>>>>>>>>>>> */
+
+.footer-nav {
+    padding: 2rem 0;
+    list-style: none;
+}
+
+footer {
+    color: #fff;
+    background-color: #1a1a1a;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+    z-index: 12;
+}
+
+footer p {
+    max-width: 330px;
+}
+
+footer .explicationProjet {
+    margin-top: 1rem;
+}
+
+footer .nav-link {
+    color: #fff;
+}
+
+footer .nav-item:first-child {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+footer .nav-item:last-child {
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+}
+
+footer .nav-link:hover {
+    border: 0;
+    border-bottom: 1px solid #fff;
+}
+
+@media (min-width: 768px) {
+    footer .explicationProjet {
+        padding-left: 2rem;
+        margin-top: 0;
+    }
+
+    .footer-nav {
+        padding: 2rem 2rem 0;
+    }
+
+    footer .nav-item:first-child, footer .nav-item:last-child {
+        border: 0;
+    }
+
+    footer .nav-link {
+        border: 0;
+        border-bottom: 1px solid transparent;
+    }
+}
+
+/* <<<<<<<<<<<<<*** PAGE D'ACCUEIL ***>>>>>>>>>>>>>>>>> */
+
+.headerAccueil {
+    background-image: url("../img/bg-foret1.jpg");
+    background-position: center center;
+}
+.headerAccueil h3 {
+    color: #fff;
+}
+.svgIntro {
+    background-image: url("../img/intro1-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@media (min-width: 576px) {
+    .headerAccueil {
+        background-image: url("../img/bg-accueil1-tablette.jpg");
+    }
+
+    .svgIntro {
+        background-size: 100%;
+        background-image: url("../img/intro1.svg");
+    }
+}
+
+@media (min-width: 768px) {
+    .headerAccueil {
+        background-image: url("../img/bg-foret1.jpg");
+    }
+
+    .svgIntro {
+        background-size: auto;
+    }
+}
+
+/* DRAG & DROP Jeu d'association d'icônes */
+.sectionAwesome {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+.emplacements {
+    margin-bottom: 6rem;
+}
+
+.caseGrise {
+    border-radius: 2px;
+    background-color: #e3e2db;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+.icones {
+    position: relative;
+}
+
+.icone {
+    color: #e3e2db;
+    position: absolute;
+}
+.icone:hover {
+    cursor: pointer;
+}
+
+.icones #user {
+    font-size: 6rem;
+    right: 0;
+    top: -6rem;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.icones #binoculars {
+    font-size: 5rem;
+    right: 6rem;
+    top: -5rem;
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+.icones #puzzle-piece {
+    font-size: 4rem;
+    top: -6rem;
+    left: 10rem;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+.icones #mouse {
+    font-size: 4rem;
+    top: -6rem;
+    left: 2rem;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.inventaire {
+    background-color: #e3e2db;
+    padding: .5rem 1rem .5rem 2rem;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+.inside-inventaire {
+    width: auto;
+    overflow: hidden;
+}
+.titreInventaire {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    padding-right: 1rem;
+    flex-basis: 100%;
+    margin-left: 0.25rem;
+}
+.groupe-cases {
+    width: 84rem;
+}
+.case {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255,255,255,.5);
+    margin: 0 .25rem;
+}
+.iconeInventaire {
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.cacher, .fas.cacher {
+    display: none;
+}
+
+.iconePoser {
+    font-size: 4rem;
+}
+
+.caseOccupied {
+    cursor: pointer;
+}
+
+.emplacementCombler {
+    background-color: #fff;
+    cursor: default;
+}
+
+.caseOccupied.surbrillance {
+    background-color: yellow;
+}
+
+@media (min-width: 768px) {
+    .sectionAwesome {
+        padding-top: 8rem;
+    }
+
+    .emplacements {
+        padding-bottom: 3rem;
+    }
+
+    .icones #binoculars {
+        top: -9rem;
+    }
+
+    .icones #puzzle-piece {
+        right: 12rem;
+        top: -7rem;
+        left: auto;
+    }
+
+    .icones #mouse {
+        right: 16rem;
+        top: -7rem;
+        left: auto;
+    }
+
+    .inventaire {
+        position: static;
+    }
+
+    .titreInventaire {
+        flex-basis: auto;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .emplacements {
+        padding-bottom: 0;
+    }
+
+    .caseOccupied {
+        cursor: default;
+    }
+    .inventaire .iconeInventaire {
+        cursor: grab;
+    }
+}
+
+/* Jumbotron avec image qui suit le curseur */
+
+.jumbotron.jumboHead {
+    background-color: transparent;
+    z-index: 50;
+}
+
+.bgBouge {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background: url('../img/bg-cabane.jpg') no-repeat center center;
+    background-size: cover;
+
+    transform: scale(1.1);
+}
+
+/* <<<<<<<<<<<<<*** PAGE JEUX ***>>>>>>>>>>>>>>>>> */
+
+.headerJeux {
+    background-image: url("../img/bg-jeux.jpg");
+    background-position: center center;
+    position: relative;
+}
+
+.contenant-mur {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 3.5rem;
+    overflow: hidden;
+    background-image: url("../img/mur4.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.headerJeux h2 {
+    color: #28170b;
+}
+
+.headerJeux .jumbotron {
+    padding-top: 7rem;
+}
+
+.headerJeux .lead {
+    color: #000;
+}
+
+.sectionJeux {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.card {
+    border: 0;
+    position: relative;
+}
+.card-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+.card-body {
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-top: 2rem;
+}
+.card-link {
+    position: absolute;
+    bottom: 1rem;
+}
+.card-link:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+p.avecLien {
+    padding-bottom: 3rem;
+}
+
+.jeux {
+    margin-bottom: 0;
+}
+
+.formulaire {
+    background-color: #e3e2db;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.input-group-prepend {
+    border: 1px solid #000;
+    border-right-width: 2px;
+    background-color: #fff;
+}
+.input-group-text {
+    background-color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+    border: 0;
+    border-radius: 0;
+}
+.input-group-text.questionJeu {
+    white-space: normal;
+}
+
+.parallax {
+    /* Création de l’effet */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.nav-inverse {
+    background-color: transparent;
+}
+
+label.active  {
+    background-color: #000;
+    color: #fff;
+}
+
+.questionRadio label:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .headerJeux .jumbotron {
+        padding-top: 10rem;
+    }
+
+    .sectionJeux {
+        padding-bottom: 0;
+    }
+
+    .jeux {
+        margin-bottom: 2rem;
+    }
+
+    .contenant-mur {
+        bottom: 5rem;
+    }
+
+    .sectionJeux {
+        padding-top: 4rem;
+        padding-bottom: 0;
+    }
+
+    p.avecLien {
+        padding-bottom: 5rem;
+    }
+
+    .formulaire {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .jeux {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sectionJeux {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* <<<<<<<<<<<<<*** MODAL AVEC CAROUSEL ***>>>>>>>>>>>>>>>>> */
+.modal-content {
+    background-color: #1a1a1a;
+    color: #999;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333;
+}
+
+.modal .close span {
+    color: #fff;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.modal-body {
+    padding: 0 1rem 0 0;
+}
+
+.modal-body p {
+    color: #999;
+}
+
+.modal-body a {
+    color: #999;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #999;
+}
+
+.modal-body a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+}
+
+.groupeModal {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.carousel {
+    padding: 0;
+}
+
+/* <<<<<<<<<<<<<*** PAGE HISTORIQUE ***>>>>>>>>>>>>>>>>> */
+
+.headerHistorique {
+    background-image: url("../img/bg-historique3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 10;
+}
+
+.grotte {
+    overflow: hidden;
+}
+
+.grotte img {
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: -3px;
+    left: 50%;
+    max-height: 382px;
+}
+
+.titreGrotte {
+    padding: 7rem 0 0;
+    height: 382px;
+}
+
+.texteGrotte {
+    max-width: 29rem;
+    padding-bottom: 6rem;
+}
+
+.sectionHistorique p {
+    font-size: 1.1em;
+}
+
+.sectionHistorique1 {
+    background-color: #1a1a1a;
+    position: relative;
+    z-index: 10;
+    padding: 6rem 2rem 5rem;
+}
+
+.contenant-souris {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 150px;
+}
+.souris {
+    position: absolute;
+    height: 150px;
+    right: 2rem;
+}
+
+.sectionHistorique2 {
+    background-image: url("../img/bg-historique-section3.jpg");
+    background-position: center center;
+    position: relative;
+    z-index: 10;
+    padding: 0 2rem 3rem;
+}
+
+.contenant-cubes {
+    position: relative;
+    top: -25px;
+    padding: 0;
+    height: 150px;
+    overflow: hidden;
+}
+.cubes {
+    display: block;
+    max-width: 190px;
+    margin: auto;
+}
+
+@media (min-width: 576px) {
+    .sectionHistorique1 {
+        padding: 3rem 2rem;
+    }
+    .sectionHistorique2 {
+        padding: 4rem 2rem 3rem;
+    }
+    .contenant-cubes {
+        position: absolute;
+        right: 0;
+    }
+    .cubes {
+        position: absolute;
+        height: 150px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .headerHistorique {
+        height: calc(100vh - 6rem);
+        min-height: 760px;
+    }
+
+    .titreGrotte {
+        padding: 10rem 0 0;
+        height: auto;
+    }
+
+    .grotte {
+        height: calc(100% + 6rem);
+        background-image: url("../img/grotte-et-texte4.svg");
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .sectionHistorique1 {
+        height: 50%;
+        min-height: 500px;
+        z-index: 9;
+    }
+
+    .contenant-souris {
+        position: fixed;
+        top: 50%;
+        height: 100%;
+    }
+    .souris {
+        position: absolute;
+        right: 1rem;
+        height: 200px;
+    }
+
+    .sectionHistorique2 {
+        height: 50%;
+        min-height: 500px;
+    }
+    .contenant-cubes {
+        height: 100%;
+        top: -50px;
+    }
+    .cubes {
+        height: 300px;
+        left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .souris {
+        rigth: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .souris {
+        height: 300px;
+    }
+}
