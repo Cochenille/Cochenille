@@ -1,0 +1,9 @@
+{
+    "name" : "DemoPWA",
+    "short_name" : "DemoPWAShortName",
+    "icons": [],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFF",
+    "theme_color": "#FEDC45"
+}
