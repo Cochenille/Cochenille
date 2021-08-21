@@ -9,6 +9,7 @@ window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 // on révèle le bouton si chrome détecte une
 function saveBeforeInstallPromptEvent(evt) {
+    console.log('PWA detectee par google, affichage du bouton d\'installation');
     //CODELAB: Add code to save event & show the install button
     deferredInstallPrompt = evt;
     installButton.removeAttribute("hidden");
