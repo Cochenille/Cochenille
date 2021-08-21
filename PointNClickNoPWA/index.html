@@ -7,6 +7,15 @@
 	<link rel="icon" type="image/png" href="img/favicon.svg" />
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="manifest" href="manifest.json">
+	<!-- POUR SAFARI !!! -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#FEDC45">
+	<meta name="apple-mobile-web-app-title" content="DemoPWA">
+	<link rel="apple-touch-icon" href="/img/icons/icon-180x180.png">
+	<meta name="theme-color" content="#FEDC45" />
+	<meta name="description" content="Ceci est une démo de PWA">
+
 </head>
 <body>
 
@@ -30,6 +39,9 @@
 			</li>
 			<li class="nav-item pl-lg-2 pr-lg-4 d-flex ml-auto">
 				<a class="nav-link px-lg-4 px-2" href="histoire.html">historique</a>
+			</li>
+			<li>
+				<button class="nav-link px-lg-4 px-2" id="butInstall" aria-label="Install">Installer la PWA</button>
 			</li>
 		</ul>
 	</div>
@@ -153,8 +165,7 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
-
-
+<script src="service-worker.js"></script>
 
 </body>
 </html>
