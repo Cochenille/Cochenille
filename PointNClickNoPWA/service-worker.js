@@ -6,7 +6,8 @@ const FILES_TO_CACHE = [
    "offline.html",
    "index.html",
    "histoire.html",
-   "jeux.html"
+   "jeux.html",
+   "install.js"
 ];
 
 self.addEventListener('install', (evt) => {
